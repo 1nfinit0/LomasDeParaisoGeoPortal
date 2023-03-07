@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+header {
+  position: relative;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+}
+.barra-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.741) 10%, rgba(255,255,255,0) 100%);
+  height: 68px;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 25px;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+h1 {
+  position: absolute;
+  font-size: 5vw;
+  z-index: 99;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  color: rgb(234, 234, 234);
+  font-weight: 900;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+.barra-container svg {
+  width: 30px;
+  filter: invert(1);
+  margin: 5px;
+}
+.barra-container .logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+}
+.barra-container .logo-img {
+  width: 65px;
+}
+.barra-container .logo-name {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 300;
+  font-style: italic;
+  margin: 5px;
+}
