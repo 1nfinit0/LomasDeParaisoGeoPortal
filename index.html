@@ -9,21 +9,42 @@
   <link rel="shortcut icon" href="./img/LomasDeParaisoLogo.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,300;1,900&display=swap" rel="stylesheet">rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,300;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="logo-container">
+  <!-- <div class="logo-container">
     <img src="./img/LomasDeParaisoLogo.png" alt="Logo" class="logo">
-  </div>  
+  </div>   -->
   <header>
     <nav class="barra-container">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M2,6 L22,6 M2,12 L22,12 M2,18 L22,18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <button class="logo-container">
+      <label class="toggle-btn">
+        <input type="checkbox">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path class="icon-initial" d="M2,6 L22,6 M2,12 L22,12 M2,18 L22,18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="icon-close" d="M6,6 L18,18 M6,18 L18,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"/>
+        </svg>
+      </label>          
+      <a class="logo-container" href="#">
         <img class="logo-img" src="./img/LomasDeParaisoLogo.png" alt="Logo de Las Lomas de Paraíso">
         <span class="logo-name">Lomas de Paraíso</span>
-      </button>
+      </a>
+      <div class="menu-content">
+        <div class="menu">
+          <div class="servicios-container">
+            <div class="servicio-geoparaiso">
+              <img src="./img/LomasDeParaisoLogo.png" alt="Logo">
+              <h2>GeoParaiso</h2>
+            </div>
+            <hr>
+          </div>
+          <div class="lista-enlaces">
+            <a href="#">Inicio</a>
+            <a href="#">Nosotros</a>
+            <a href="#">Servicios</a>
+            <a href="#">Contacto</a>
+          </div>
+        </div>
+      </div>
     </nav>
     <video src="./img/webvideo.mp4" class="video" autoplay muted loop preload="auto"></video>
     <div class="tittle-container">
@@ -44,7 +65,7 @@
     </div>
     <div class="arrow-container">
       <div class="arrow-down"></div>
-    </div>    
+    </div>
   </header>
   <main>
 

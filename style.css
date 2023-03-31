@@ -47,7 +47,6 @@ header {
   width: 100%;
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.741) 10%, rgba(255,255,255,0) 100%);
-  height: 68px;
   z-index: 99;
   display: flex;
   flex-direction: row;
@@ -100,14 +99,14 @@ header {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-  top: 20%;
+  top: 25%;
 }
 .tittle-container .tittle-sub {
   font-size: 1.5rem;
   color: white;
   font-weight: 400;
   text-align: center;
-  margin: 5px;
+  margin-bottom: 5px;
 }
 .tittle-container .tittle {
   font-size: 7rem;
@@ -188,8 +187,8 @@ header {
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 50px;
-  left: 50%;
+  bottom: 20px;
+  left: calc(50% - 8px);
   transform: translateX(-50%);
   animation: bounce 2s infinite;
 }
@@ -211,6 +210,91 @@ header {
     transform: translateY(5px);
   }
 }
+.toggle-btn {
+  display: inline-block;
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+.toggle-btn input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+.toggle-btn .icon {
+  height: 100%;
+  width: 100%;
+}
+.menu-content {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 68px);
+  backdrop-filter: blur(3px) opacity(0.9);
+  transition: transform 0.3s ease-out;
+  transform: translateX(-100%);
+}
+.menu-content .menu {
+  width: 100%;
+  max-width: 250px;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.menu-content .menu .servicios-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+}
+.menu-content .menu .servicios-container .servicio-geoparaiso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.menu-content .menu .servicios-container .servicio-geoparaiso img {
+  width: 25px;
+  margin-right: 10px;
+}
+.menu-content .menu .servicios-container .servicio-geoparaiso h2 {
+  color: white;
+  font-size: 1.5rem;
+}
+.menu-content .menu .servicios-container hr {
+  width: 80%;
+  height: 1px;
+  border: none;
+  background-color: gray;
+  margin: 10px 0;
+}
+.menu-content .menu .lista-enlaces {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+.menu-content .menu .lista-enlaces a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .tittle-container .tittle {
     font-size: 4rem;
@@ -221,8 +305,10 @@ header {
   .accion-visitar-container .accion-visitar-spam {
     font-size: 1.2rem;
   }
+  .menu-content .menu {
+    max-width: 160px;
+  }
 }
-
 main {
   width: 100%;
   height: 100vh;
