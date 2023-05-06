@@ -13,7 +13,7 @@ function beat() {
   logoContainer.classList.add('beating');
   setTimeout(() => {
     logoContainer.classList.remove('beating');
-  }, 400);
+  }, 300);
 }
 setInterval(beat, 1000);
 
