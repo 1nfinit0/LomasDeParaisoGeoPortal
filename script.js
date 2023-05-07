@@ -35,6 +35,16 @@ const iconInitial = document.querySelector('.icon-initial');
 const iconClose = document.querySelector('.icon-close');
 const checkbox = toggleBtn.querySelector('input[type="checkbox"]');
 const content = document.getElementsByClassName('menu-content')[0];
+const menu = document.querySelector('.menu');
+const relleno = document.querySelector('.relleno');
+
+relleno.addEventListener('click', function() {
+  iconInitial.style.display = 'block';
+  iconClose.style.display = 'none';
+  content.style.transform = 'translateX(-100%)';
+  document.body.style.overflow = '';
+  checkbox.checked = false;
+});
 
 checkbox.addEventListener('change', () => {
   if (checkbox.checked) {
