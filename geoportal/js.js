@@ -26,11 +26,21 @@ checkbox.addEventListener('change', () => {
 
 var boundary = [-81.3899688720703, -18.4412956237793, -68.5886001586914, 0.0298568718135357];
 
+var zoomLevel = L.Browser.mobile ? 5 : 6; // Ajusta el nivel de zoom según el dispositivo, el primero es para móviles y el segundo para el resto
+
 var map = L.map('map', {
     center: [(boundary[1] + boundary[3]) / 2, (boundary[0] + boundary[2]) / 2],
-    zoom: 7,
+    zoom: zoomLevel,
 });
 
+
 L.tileLayer('http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
-    maxZoom: 10,
+    
 }).addTo(map);
+
+
+// Botón de restablecer vista del mapa
+var resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', function() {
+    map.setView([(boundary[1] + boundary[3]) / 2, (boundary[0] + boundary[2]) / 2], zoomLevel);
+});
