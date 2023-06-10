@@ -69,7 +69,7 @@ header {
   margin: 5px;
 }
 .barra-container .logo-container {
-  width: 100%;
+  width: auto;
   height: auto;
   max-height: 65px;
   display: flex;
