@@ -24,6 +24,20 @@ checkbox.addEventListener('change', () => {
 });
 
 
+const opcionLabel = document.querySelector('.opcion_label');
+const subopcion = document.querySelector('.subopcion');
+
+subopcion.style.display = 'none';
+
+opcionLabel.addEventListener('click', function() {
+  if (subopcion.style.display === 'none') {
+    subopcion.style.display = 'block';
+  } else {
+    subopcion.style.display = 'none';
+  }
+});
+
+
 var boundary = [-81.3899688720703, -18.4412956237793, -68.5886001586914, 0.0298568718135357];
 
 var zoomLevel = L.Browser.mobile ? 5 : 6; // Ajusta el nivel de zoom según el dispositivo, el primero es para móviles y el segundo para el resto
