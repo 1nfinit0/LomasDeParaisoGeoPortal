@@ -227,7 +227,7 @@ header {
   display: flex;
   cursor: pointer;
   justify-content: space-between;
-  margin: 5px 0;
+  margin: 10px 0;
 }
 .menu-content .menu .options_container .opcion .subopcion .target span {
   font-size: 1.4rem;
@@ -262,7 +262,7 @@ input[type=checkbox]:checked:before {
 input[type=checkbox]:checked:after {
   content: "";
   display: block;
-  width: 5px;
+  width: 3px;
   height: 10px;
   border: solid white;
   border-width: 0 2px 2px 0;

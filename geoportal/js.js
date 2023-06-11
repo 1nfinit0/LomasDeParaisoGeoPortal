@@ -70,11 +70,10 @@ L.tileLayer('http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
     
 }).addTo(map);
 
+var anotherLayer = L.geoJSON(data).addTo(map);
 
 // Botón de restablecer vista del mapa
 var resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', function() {
     map.setView([(boundary[1] + boundary[3]) / 2, (boundary[0] + boundary[2]) / 2], zoomLevel);
 });
-
-var anotherLayer = L.geoJSON(data).addTo(map);
