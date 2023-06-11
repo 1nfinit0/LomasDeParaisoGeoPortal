@@ -24,18 +24,36 @@ checkbox.addEventListener('change', () => {
 });
 
 
-const opcionLabel = document.querySelector('.opcion_label');
-const subopcion = document.querySelector('.subopcion');
+const opcionLabels = document.querySelectorAll('.opcion_label');
 
-subopcion.style.display = 'none';
+opcionLabels.forEach(function(opcionLabel) {
+  const subopcion = opcionLabel.nextElementSibling;
+  subopcion.style.display = 'none';
 
-opcionLabel.addEventListener('click', function() {
-  if (subopcion.style.display === 'none') {
-    subopcion.style.display = 'block';
-  } else {
-    subopcion.style.display = 'none';
-  }
+  opcionLabel.addEventListener('click', function() {
+    if (subopcion.style.display === 'none') {
+      subopcion.style.display = 'block';
+    } else {
+      subopcion.style.display = 'none';
+    }
+  });
 });
+
+opcionLabels.forEach(function(opcionLabel) {
+  const subopcion = opcionLabel.nextElementSibling;
+  subopcion.style.maxHeight = '0';
+  subopcion.style.overflow = 'hidden';
+
+  opcionLabel.addEventListener('click', function() {
+    if (subopcion.style.maxHeight === '0px') {
+      subopcion.style.maxHeight = subopcion.scrollHeight + 'px';
+    } else {
+      subopcion.style.maxHeight = '0';
+    }
+  });
+});
+
+
 
 
 var boundary = [-81.3899688720703, -18.4412956237793, -68.5886001586914, 0.0298568718135357];
@@ -58,3 +76,5 @@ var resetButton = document.getElementById('resetButton');
 resetButton.addEventListener('click', function() {
     map.setView([(boundary[1] + boundary[3]) / 2, (boundary[0] + boundary[2]) / 2], zoomLevel);
 });
+
+var anotherLayer = L.geoJSON(data).addTo(map);

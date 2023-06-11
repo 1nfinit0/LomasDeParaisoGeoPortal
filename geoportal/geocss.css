@@ -203,7 +203,7 @@ header {
 }
 .menu-content .menu .options_container .opcion .opcion_label span {
   width: 90%;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 .menu-content .menu .options_container .opcion .opcion_label i {
   width: 10%;
@@ -221,7 +221,6 @@ header {
   margin: 10px 0;
   padding: 0 4px;
   flex-direction: column;
-  
 }
 .menu-content .menu .options_container .opcion .subopcion .target {
   width: 100%;

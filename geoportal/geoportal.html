@@ -11,21 +11,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,900;1,300;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./geocss.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@2.1.3/dist/esri-leaflet.js"></script>
-    <script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"></script>
-    <script src="JS/lib/leaflet-providers.js"></script>
-    <script src="https://cdn.osmbuildings.org/OSMBuildings-Leaflet.js"></script>
-    <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
-    <link rel="stylesheet" href="CSS/lib/leaflet.groupedlayercontrol.min.css">
-    <script src="JS/lib/leaflet.groupedlayercontrol.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="CSS/lib/Control.MiniMap.css">
-    <script src="JS/lib/Control.MiniMap.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.css">
-    <script src="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.min.js"></script>
-    <script src="JS/lib/leaflet.wms.js"></script>
-    <script src="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.js"></script>
-    <link rel="stylesheet" href="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.css"/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet@2.1.3/dist/esri-leaflet.js"></script>
+  <script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"></script>
+  <script src="JS/lib/leaflet-providers.js"></script>
+  <script src="https://cdn.osmbuildings.org/OSMBuildings-Leaflet.js"></script>
+  <script src="https://use.fontawesome.com/a64989e3a8.js"></script>
+  <link rel="stylesheet" href="CSS/lib/leaflet.groupedlayercontrol.min.css">
+  <script src="JS/lib/leaflet.groupedlayercontrol.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="CSS/lib/Control.MiniMap.css">
+  <script src="JS/lib/Control.MiniMap.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.css">
+  <script src="https://unpkg.com/leaflet.pm@latest/dist/leaflet.pm.min.js"></script>
+  <script src="JS/lib/leaflet.wms.js"></script>
+  <script src="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.js"></script>
+  <link rel="stylesheet" href="https://dayjournal.github.io/Leaflet.Control.Opacity/plugin/Leaflet.Control.Opacity/dist/L.Control.Opacity.css"/>
+  <!-- Geojson lecutra -->
+  <script src="https://unpkg.com/geojson-vt@3.2.0/geojson-vt.js"></script>
+  <!-- DATA -->
+  <script src="./data/limites_departamentales.js"></script>
 </head>
 <body>
   <header>
@@ -68,10 +72,20 @@
               </div>
             </div>
             <div class="opcion">
-              Límites
-            </div>
-            <div class="opcion">
-              Límites
+              <div class="opcion_label">
+                <span>Inventario 2023 - I</span>
+                <i class="fa fa-caret-down"></i>
+              </div>
+              <div class="subopcion">
+                <div class="target">
+                  <span>Distrital</span>
+                  <input id="subopcion_distrital" type="checkbox">
+                </div>
+                <div class="target">
+                  <span>Distrital</span>
+                  <input id="subopcion_distrital" type="checkbox">
+                </div>
+              </div>
             </div>
           </div>
           </div>
@@ -89,5 +103,6 @@
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="./js.js"></script>
+  <script src="./data/logic_layers.js"></script>
 </body>
 </html>
