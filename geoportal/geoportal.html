@@ -31,6 +31,8 @@
   <script src="./data/leaflet-geojson-vt.js"></script>
   <!-- DATA -->
   <script src="./data/limites_departamentales.js"></script>
+  <script type="module" src="./js.js"></script>
+  <script type="module" src="./logic_layers.js"></script>
 </head>
 <body>
   <header>
@@ -63,31 +65,39 @@
               </div>
               <div class="subopcion">
                 <div class="target">
-                  <span>Distrital (VMT)</span>
+                  <span>Estatal</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>ACR Lomas de Paraiso</span>
+                  <span>Departamental</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>Zonas de Inventario</span>
+                  <span>Provincial</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>Zona Vizcachas</span>
+                  <span>Distrital</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>Zona Quebrada Alta</span>
+                  <span>Distrital VMT</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>Zona Bellavista</span>
+                  <span>Zonal VMT</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
                 <div class="target">
-                  <span>Zona Atrapanieblas</span>
+                  <span>ACR (Área de Concervación Regional)</span>
+                  <input id="subopcion_distrital" type="checkbox">
+                </div>
+                <div class="target">
+                  <span>Lomas de Paraíso</span>
+                  <input id="subopcion_distrital" type="checkbox">
+                </div>
+                <div class="target">
+                  <span>ACR (Área de Concervación Regional)</span>
                   <input id="subopcion_distrital" type="checkbox">
                 </div>
               </div>
@@ -123,7 +133,6 @@
     </div>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script type="module" src="./js.js"></script>
-  <script src="./data/logic_layers.js"></script>
+  
 </body>
 </html>
