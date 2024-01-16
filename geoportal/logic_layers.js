@@ -20,8 +20,40 @@ resetButton.addEventListener('click', function() {
 });
 
 /**
- * lÓGICA DEL MANEJO DE CAPAS EN EL MAPA
+ * LÓGICA DEL MANEJO DE CAPAS EN EL MAPA
  */
+//var anotherLayer = L.geoJSON(data).addTo(map);
 
 
-var anotherLayer = L.geoJSON(data).addTo(map);
+const checkboxes = document.querySelectorAll('.subopcion-checkbox');
+
+const geoJSONLayers = {
+    'subopcion_distrital': limDistrital,
+    // Asocia más checkboxes con sus respectivas capas GeoJSON
+};
+
+checkboxes.forEach(checkbox => {
+    const layerId = checkbox.id;
+    let activeLayer = null;
+    
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            // Si el checkbox está activado, verifica si la capa ya está en el mapa antes de agregarla
+            const existingLayer = geoJSONLayers[layerId];
+            if (existingLayer && !map.hasLayer(existingLayer)) {
+                if (activeLayer) {
+                    map.removeLayer(activeLayer);
+                }
+                activeLayer = L.geoJSON(existingLayer).addTo(map);
+            }
+        } else {
+            // Si el checkbox está desactivado, remueve la capa correspondiente del mapa
+            if (activeLayer) {
+                map.removeLayer(activeLayer);
+                activeLayer = null;
+            }
+        }
+    });
+});
+
+
