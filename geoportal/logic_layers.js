@@ -2,7 +2,7 @@
 var boundary = [-76.94264, -12.14154, -76.91321, -12.14598];
 
 // Establecemos la variable para ajustar el nivel de zoom según el dispositivo, el primero es para móviles y el segundo para el resto
-var zoomLevel = L.Browser.mobile ? 18 : 16; 
+var zoomLevel = L.Browser.mobile ? 15 : 16; 
 
 //Establece el centro del mapa y tanbién aplicamos la variale zoom
 var map = L.map('map', {
