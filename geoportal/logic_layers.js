@@ -1,8 +1,8 @@
 //Coordenadas de loc 4 puntos extremos del mapa (No es necesario)
-var boundary = [-81.3899688720703, -18.4412956237793, -68.5886001586914, 0.0298568718135357];
+var boundary = [-76.94264, -12.14154, -76.91321, -12.14598];
 
 // Establecemos la variable para ajustar el nivel de zoom según el dispositivo, el primero es para móviles y el segundo para el resto
-var zoomLevel = L.Browser.mobile ? 5 : 6; 
+var zoomLevel = L.Browser.mobile ? 18 : 16; 
 
 //Establece el centro del mapa y tanbién aplicamos la variale zoom
 var map = L.map('map', {
@@ -28,8 +28,19 @@ resetButton.addEventListener('click', function() {
 const checkboxes = document.querySelectorAll('.subopcion-checkbox');
 
 const geoJSONLayers = {
-    'subopcion_distrital': limDistrital,
+    // 'subopcion_distrital': limDistrital,
+    'subopcion_especies_totales': registrosTotales,
     // Asocia más checkboxes con sus respectivas capas GeoJSON
+};
+
+// Estilo para puntos
+var geojsonMarkerOptions = {
+    radius: 5,
+    fillColor: "#3498db",  // Azul claro
+    color: "#2980b9",      // Borde azul
+    weight: 2,
+    opacity: 0.5,
+    fillOpacity: 0.9
 };
 
 checkboxes.forEach(checkbox => {
@@ -44,7 +55,11 @@ checkboxes.forEach(checkbox => {
                 if (activeLayer) {
                     map.removeLayer(activeLayer);
                 }
-                activeLayer = L.geoJSON(existingLayer).addTo(map);
+                activeLayer = L.geoJSON(existingLayer, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.circleMarker(latlng, geojsonMarkerOptions);
+                    }
+                }).addTo(map);
             }
         } else {
             // Si el checkbox está desactivado, remueve la capa correspondiente del mapa
@@ -55,5 +70,3 @@ checkboxes.forEach(checkbox => {
         }
     });
 });
-
-
